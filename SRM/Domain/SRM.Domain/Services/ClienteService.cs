@@ -2,6 +2,7 @@
 using SRM.Domain.Interfaces.Repositories;
 using SRM.Domain.Interfaces.Service;
 using SRM.Domain.Repository;
+using System;
 using System.Collections.Generic;
 
 namespace SRM.Domain.Services
@@ -32,9 +33,14 @@ namespace SRM.Domain.Services
         public void Salvar(Cliente model)
         {
             if (model.Id <= 0)
+            {
+                model.DataCadastro = DateTime.Now;
                 _repository.Save(model);
+            }
             else
+            {
                 _repository.Update(model);
+            }
         }
     }
 }

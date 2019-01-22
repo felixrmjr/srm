@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Cliente.cs" />
+    <Compile Include="Entities\EntityBase.cs" />
     <Compile Include="Interfaces\Applications\IClienteApplication.cs" />
     <Compile Include="Interfaces\ISRMApplicationBase.cs" />
     <Compile Include="Interfaces\ISRMServiceBase.cs" />

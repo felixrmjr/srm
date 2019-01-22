@@ -7,20 +7,19 @@ namespace SRM.Repository
 {
     public class SRMContext : DbContext, IUnitOfWork<SRMContext>
     {
-        //public SRMContext(DbContextOptions<RevendaContext> options) : base(options) { }
+        public SRMContext() : base("name=SRMDb") { }
 
-        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            //modelBuilder.Entity<>
 
-            //modelBuilder.ApplyConfiguration(new ClienteMap());
+            modelBuilder.Configurations.Add(new ClienteMap());
         }
 
         public virtual DbSet<Cliente> Clientes { get; set; }
 
-        public int Commit() => SaveChanges();
+        public int Commit() => this.SaveChanges();
+        
     }
 }

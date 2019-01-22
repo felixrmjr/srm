@@ -21,16 +21,14 @@ namespace SRM.App
         {
             var services = new ServiceCollection();
             SRMIoc.Register(services);
-            //services.AddSingleton<FrmCliente>(new FrmCliente());
             services.AddTransient<FrmCliente>();
             ServiceProvider = services.BuildServiceProvider();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new FrmCliente());
-            var a = (FrmCliente)ServiceProvider.GetService(typeof(FrmCliente));
-            Application.Run(a);
+            var form = (FrmCliente)ServiceProvider.GetService(typeof(FrmCliente));
+            Application.Run(form);
         }
     }
 }

@@ -2,10 +2,12 @@
 using SRM.Domain.Repository;
 using SRM.Domain.Interfaces.Repositories;
 using System.Collections.Generic;
+using SRM.Domain.Entities;
 
 namespace SRM.Domain.Services
 {
     public class SRMServiceBase<TContexto, TEntity, TIdentity> : ISRMServiceBase<TContexto, TEntity, TIdentity>
+            where TEntity : EntityBase
          where TContexto : IUnitOfWork<TContexto>
     {
 

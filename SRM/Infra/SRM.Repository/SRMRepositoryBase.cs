@@ -1,4 +1,5 @@
-﻿using SRM.Domain.Interfaces.Repositories;
+﻿using SRM.Domain.Entities;
+using SRM.Domain.Interfaces.Repositories;
 using SRM.Domain.Repository;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ using System.Threading.Tasks;
 namespace SRM.Repository
 {
     public class SRMRepositoryBase<TContext, TEntity, TIdentity> : ISRMRepositoryBase<TContext, TEntity, TIdentity>
+        where TEntity : EntityBase
         where TContext : IUnitOfWork<TContext>
-        where TEntity : class
     {
 
         public IUnitOfWork<TContext> UnitOfWork { get; }

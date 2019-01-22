@@ -1,9 +1,12 @@
-﻿using SRM.Domain.Interfaces;
+﻿using SRM.Domain.Entities;
+using SRM.Domain.Interfaces;
 using SRM.Domain.Repository;
 
 namespace SRM.Application
 {
-    public class SRMApplicationBase<TContext, TEntity, TIdentity> where TContext : IUnitOfWork<TContext>
+    public class SRMApplicationBase<TContext, TEntity, TIdentity>
+        where TEntity  : EntityBase
+        where TContext : IUnitOfWork<TContext>
     {
 
         protected readonly ISRMServiceBase<TContext, TEntity, TIdentity> _service;

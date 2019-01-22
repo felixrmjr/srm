@@ -25,6 +25,8 @@ namespace SRM.Ioc
 
         public static void Register(IServiceCollection services)
         {
+            //services.AddScoped<IUnitOfWork<CoreContext>, CoreContext>();
+
             services.AddScoped(typeof(IUnitOfWork<SRMContext>), typeof(SRMContext));
 
             services.AddScoped(typeof(IClienteApplication<>), typeof(ClienteApplication<>));

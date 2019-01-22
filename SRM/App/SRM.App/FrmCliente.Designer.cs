@@ -35,7 +35,6 @@
             this.txtConsultaNome = new System.Windows.Forms.TextBox();
             this.lblConsultaNome = new System.Windows.Forms.Label();
             this.tabCadastro = new System.Windows.Forms.TabPage();
-            this.tabImportacao = new System.Windows.Forms.TabPage();
             this.lblCadastroLimite = new System.Windows.Forms.Label();
             this.lblCadastroNome = new System.Windows.Forms.Label();
             this.lblCadastroTelefone = new System.Windows.Forms.Label();
@@ -45,10 +44,17 @@
             this.lblCadastroEmail = new System.Windows.Forms.Label();
             this.btnCadastroSalvar = new System.Windows.Forms.Button();
             this.txtCadastroNome = new System.Windows.Forms.TextBox();
+            this.tabImportacao = new System.Windows.Forms.TabPage();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.btnImportacaoImportar = new System.Windows.Forms.Button();
+            this.grdImportacao = new System.Windows.Forms.DataGridView();
+            this.btnImportacaoGravar = new System.Windows.Forms.Button();
             this.tabCliente.SuspendLayout();
             this.tabConsulta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).BeginInit();
             this.tabCadastro.SuspendLayout();
+            this.tabImportacao.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grdImportacao)).BeginInit();
             this.SuspendLayout();
             // 
             // tabCliente
@@ -130,16 +136,6 @@
             this.tabCadastro.Text = "Cadastro";
             this.tabCadastro.UseVisualStyleBackColor = true;
             // 
-            // tabImportacao
-            // 
-            this.tabImportacao.Location = new System.Drawing.Point(4, 22);
-            this.tabImportacao.Name = "tabImportacao";
-            this.tabImportacao.Padding = new System.Windows.Forms.Padding(3);
-            this.tabImportacao.Size = new System.Drawing.Size(751, 410);
-            this.tabImportacao.TabIndex = 2;
-            this.tabImportacao.Text = "Importação";
-            this.tabImportacao.UseVisualStyleBackColor = true;
-            // 
             // lblCadastroLimite
             // 
             this.lblCadastroLimite.AutoSize = true;
@@ -214,6 +210,51 @@
             this.txtCadastroNome.Size = new System.Drawing.Size(633, 20);
             this.txtCadastroNome.TabIndex = 10;
             // 
+            // tabImportacao
+            // 
+            this.tabImportacao.Controls.Add(this.btnImportacaoGravar);
+            this.tabImportacao.Controls.Add(this.grdImportacao);
+            this.tabImportacao.Controls.Add(this.btnImportacaoImportar);
+            this.tabImportacao.Location = new System.Drawing.Point(4, 22);
+            this.tabImportacao.Name = "tabImportacao";
+            this.tabImportacao.Padding = new System.Windows.Forms.Padding(3);
+            this.tabImportacao.Size = new System.Drawing.Size(751, 335);
+            this.tabImportacao.TabIndex = 2;
+            this.tabImportacao.Text = "Importação";
+            this.tabImportacao.UseVisualStyleBackColor = true;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // btnImportacaoImportar
+            // 
+            this.btnImportacaoImportar.Location = new System.Drawing.Point(6, 13);
+            this.btnImportacaoImportar.Name = "btnImportacaoImportar";
+            this.btnImportacaoImportar.Size = new System.Drawing.Size(176, 23);
+            this.btnImportacaoImportar.TabIndex = 0;
+            this.btnImportacaoImportar.Text = "Importar";
+            this.btnImportacaoImportar.UseVisualStyleBackColor = true;
+            this.btnImportacaoImportar.Click += new System.EventHandler(this.btnImportacaoImportar_Click);
+            // 
+            // grdImportacao
+            // 
+            this.grdImportacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdImportacao.Location = new System.Drawing.Point(7, 48);
+            this.grdImportacao.Name = "grdImportacao";
+            this.grdImportacao.Size = new System.Drawing.Size(738, 281);
+            this.grdImportacao.TabIndex = 1;
+            // 
+            // btnImportacaoGravar
+            // 
+            this.btnImportacaoGravar.Location = new System.Drawing.Point(569, 13);
+            this.btnImportacaoGravar.Name = "btnImportacaoGravar";
+            this.btnImportacaoGravar.Size = new System.Drawing.Size(176, 23);
+            this.btnImportacaoGravar.TabIndex = 2;
+            this.btnImportacaoGravar.Text = "Gravar";
+            this.btnImportacaoGravar.UseVisualStyleBackColor = true;
+            this.btnImportacaoGravar.Click += new System.EventHandler(this.btnImportacaoGravar_Click);
+            // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,6 +269,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.grdDados)).EndInit();
             this.tabCadastro.ResumeLayout(false);
             this.tabCadastro.PerformLayout();
+            this.tabImportacao.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdImportacao)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -251,6 +294,10 @@
         private System.Windows.Forms.Label lblCadastroEmail;
         private System.Windows.Forms.Button btnCadastroSalvar;
         private System.Windows.Forms.TextBox txtCadastroNome;
+        private System.Windows.Forms.Button btnImportacaoImportar;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.DataGridView grdImportacao;
+        private System.Windows.Forms.Button btnImportacaoGravar;
     }
 }
 

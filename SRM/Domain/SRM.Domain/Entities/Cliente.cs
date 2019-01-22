@@ -2,7 +2,7 @@
 
 namespace SRM.Domain.Entities
 {
-    public class Cliente
+    public class Cliente : EntityBase
     {
         public int Id { get; set; }
         public string Nome { get; set; }

@@ -14,6 +14,8 @@ namespace SRM.Repository.Repositories
 
         public List<Cliente> GetByName(string nome)
         {
+            #region [ MOCK ]
+
             var mock = new List<Cliente>();
 
             mock.Add(new Cliente
@@ -46,8 +48,10 @@ namespace SRM.Repository.Repositories
                 DataCadastro = DateTime.Now
             });
 
-            var dados = mock.Where(c => c.Nome.ToLowerInvariant().Contains(nome.ToLowerInvariant())).ToList();
-            //var dados = DbSet.Where(c => c.Nome.ToLowerInvariant().Contains(nome.ToLowerInvariant()));
+            #endregion
+
+            //var dados = mock.Where(c => c.Nome.ToLowerInvariant().Contains(nome.ToLowerInvariant())).ToList();
+            var dados = DbSet.Where(c => c.Nome.Contains(nome)).ToList();
 
             return dados;            
         }

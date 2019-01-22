@@ -1,28 +1,24 @@
 ﻿using SRM.Domain.Entities;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.ModelConfiguration;
 
 namespace SRM.Repository.Maps
 {
-    public class ClienteMap
+    public class ClienteMap : EntityTypeConfiguration<Cliente>
     {
+        public ClienteMap() : this("dbo") { }
 
-        
-        //protected override void ConfigurarMapeamento(EntityTypeBuilder<Cliente> builder)
-        //{
-        //    builder.ToTable("Cliente", "dbo");
+        public ClienteMap(string schema)
+        {
+            ToTable(schema + ".Cliente");
+            HasKey(x => x.Id);
 
-        //    builder.Property(x => x.Id).HasColumnName($"{nameof(Cliente)}Id").IsRequired().ValueGeneratedOnAdd();
-
-        //    builder.HasIndex(x => x.CpfCnpj).IsUnique();
-        //    builder.Property(x => x.CpfCnpj).HasColumnType("varchar(20)");
-        //    builder.Property(x => x.RazaoSocial).HasMaxLength(512).IsRequired();
-        //    builder.Property(x => x.Tipo).IsRequired();
-        //    builder.Property(x => x.status).HasColumnName("StatusId").IsRequired();
-        //    builder.Property(x => x.RevendedorId).IsRequired();
-        //    builder.Property(x => x.PlanoId);
-        //    builder.Property(x => x.MotivoBloqueio);
-        //    builder.Property(x => x.FaturaCicloId);
-
-        //    builder.Ignore(x => x.Ativo);
-        //}
+            Property(x => x.Id).HasColumnName("Id").IsRequired().HasColumnType("int").HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);
+            Property(x => x.Nome).HasColumnName("Nome").IsRequired().HasColumnType("varchar").HasMaxLength(128);
+            Property(x => x.Email).HasColumnName("Email").IsRequired().HasColumnType("varchar").HasMaxLength(128);
+            Property(x => x.Telefone).HasColumnName("Telefone").IsRequired().HasColumnType("varchar").HasMaxLength(128);
+            Property(x => x.LimiteCompra).HasColumnName("LimiteCompra").IsRequired().HasColumnType("decimal").HasPrecision(20, 2);
+            Property(x => x.DataCadastro).HasColumnName("DataCadastro").IsRequired().HasColumnType("datetime");
+        }
     }
 }
