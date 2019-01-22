@@ -14,43 +14,6 @@ namespace SRM.Repository.Repositories
 
         public List<Cliente> GetByName(string nome)
         {
-            #region [ MOCK ]
-
-            var mock = new List<Cliente>();
-
-            mock.Add(new Cliente
-            {
-                Id = 1,
-                Nome = "Felix 1",
-                Email = "felixrmjr@gmail.com",
-                Telefone = "11 980179185",
-                LimiteCompra = 300,
-                DataCadastro = DateTime.Now
-            });
-
-            mock.Add(new Cliente
-            {
-                Id = 2,
-                Nome = "Felix 2",
-                Email = "felixrmjr@gmail.com",
-                Telefone = "11 980179185",
-                LimiteCompra = 300,
-                DataCadastro = DateTime.Now
-            });
-
-            mock.Add(new Cliente
-            {
-                Id = 3,
-                Nome = "Felix 3",
-                Email = "felixrmjr@gmail.com",
-                Telefone = "11 980179185",
-                LimiteCompra = 300,
-                DataCadastro = DateTime.Now
-            });
-
-            #endregion
-
-            //var dados = mock.Where(c => c.Nome.ToLowerInvariant().Contains(nome.ToLowerInvariant())).ToList();
             var dados = DbSet.Where(c => c.Nome.Contains(nome)).ToList();
 
             return dados;            
