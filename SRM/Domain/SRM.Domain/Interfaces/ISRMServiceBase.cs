@@ -8,9 +8,5 @@ namespace SRM.Domain.Interfaces
         TEntity Update(TEntity entity);
         void Delete(TIdentity chave);
         TEntity Get(TIdentity id);
-        //ICollection<TEntity> GetAll(QueryFilter filter = null);
-        //IPagedList<TEntity> GetPaginated(QueryFilter filter, int start = 0, int limit = 10, bool orderByDescending = true);
-        //void Ativar(TIdentity id);
-        //void Inativar(TIdentity id);
     }
 }

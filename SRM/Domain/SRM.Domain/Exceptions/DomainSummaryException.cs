@@ -12,7 +12,6 @@ namespace SRM.Domain.Exceptions
 
         public DomainSummaryException(List<ExceptionItemInfo> exceptions) => this.Exceptions.AddRange(exceptions);
 
-
         public void Add(ExceptionItemInfo exceptionItemInfo)
         {
             Throw.IfIsNull(exceptionItemInfo, nameof(exceptionItemInfo));

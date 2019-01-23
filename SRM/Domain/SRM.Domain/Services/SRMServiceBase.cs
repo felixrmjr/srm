@@ -41,18 +41,5 @@ namespace SRM.Domain.Services
         }
 
         public virtual List<TEntity> GetAll() => _repository.GetAll();
-        //public virtual IPagedList<TEntity> GetPaginated(QueryFilter filter, int start = 0, int limit = 10, bool orderByDescending = true) => _repository.GetPaginated(filter, start, limit, orderByDescending);
-
-        //public virtual void Ativar(TIdentity id)
-        //{
-        //    var entidade = _repository.Get(id);
-        //    entidade();
-        //}
-
-        //public virtual void Inativar(TIdentity id)
-        //{
-        //    var entidade = _repository.Get(id);
-        //    entidade.Inativar();
-        //}
     }
 }

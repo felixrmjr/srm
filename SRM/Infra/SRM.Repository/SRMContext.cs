@@ -9,17 +9,14 @@ namespace SRM.Repository
     {
         public SRMContext() : base("name=SRMDb") { }
 
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-
             modelBuilder.Configurations.Add(new ClienteMap());
         }
 
         public virtual DbSet<Cliente> Clientes { get; set; }
 
         public int Commit() => this.SaveChanges();
-        
     }
 }

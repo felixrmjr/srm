@@ -32,6 +32,5 @@ namespace SRM.Application.ServiceApplication
             _clienteService.Salvar(model);
             _unitOfWork.Commit();
         }
-
     }
 }

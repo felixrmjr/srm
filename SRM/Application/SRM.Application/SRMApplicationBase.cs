@@ -45,27 +45,5 @@ namespace SRM.Application
             var entidade = _service.Get(id);
             return entidade;
         }
-
-        //public virtual ICollection<TEntity> GetAll(QueryFilter filter = null)
-        //{
-        //    return _service.GetAll(filter);
-        //}
-
-        //public virtual IPagedList<TEntity> GetPaginated(QueryFilter filter, int start = 0, int limit = 10, bool orderByDescending = true)
-        //{
-        //    return _service.GetPaginated(filter, start, limit);
-        //}
-
-        //public virtual void Ativar(TIdentity id)
-        //{
-        //    _service.Ativar(id);
-        //    _unitOfWork.Commit();
-        //}
-
-        //public virtual void Inativar(TIdentity id)
-        //{
-        //    _service.Inativar(id);
-        //    _unitOfWork.Commit();
-        //}
     }
 }
